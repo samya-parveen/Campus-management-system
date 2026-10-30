@@ -55,7 +55,14 @@ billing, transactions and audit records.
 6. Open the website in a browser.
 
 ## Team Members
-Add all team member names and GitHub usernames here.
+Samya Parveen
+Diksha
+Aayushi Deep
+Anjali Kumari
+Vansh
+Abhishek Gautam
+Anurag Kumar
+Priyanshu
 
 ## Project Status
 Under Development.
