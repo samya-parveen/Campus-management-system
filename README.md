@@ -55,14 +55,7 @@ billing, transactions and audit records.
 6. Open the website in a browser.
 
 ## Team Members
-Samya Parveen
-Diksha
-Aayushi Deep
-Anjali Kumari
-Vansh
-Abhishek Gautam
-Anurag Kumar
-Priyanshu
+Samya Parveen, Diksha, Aayushi Deep, Anjali Kumari, Vansh, Abhishek Gautam, Anurag Kumar, Priyanshu
 
 ## Project Status
 Under Development.
