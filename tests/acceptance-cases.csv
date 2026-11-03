@@ -1,0 +1,13 @@
+ID,Requirement,Input,Expected result
+T01,FR1,"Add Book 101, C++ Textbook, base 500","Accepted; one product exists"
+T02,FR1/FR2/CR1,"Duplicate ID; empty name; negative or infinite price; invalid category","All invalid additions rejected; catalog unchanged"
+T03,FR2,"Book base 500; Accessory base 800","Category prices 450 and 840"
+T04,FR3,"Book 101 with 10 percent discount","405"
+T05,CR2,"Accessory 202 with 10 percent discount and coupon 20","736"
+T06,CR2,"Accessory 202 with 10 percent discount and coupon 1000","0, never negative"
+T07,FR8,"Percent -1 or 101; coupon -1","Each calculation rejects invalid input"
+T08,FR4,"Add bill amounts 405 and 736","Total 1141.00 and formatted bill output"
+T09,FR6,"Audit product 101, C++ Textbook","Audit output contains ID 101 and product name"
+T10,CR1,"Stationery 303, Pen Set, base 200","Category price 190; after 10 percent discount 171"
+T11,FR5,"Add two products, then delete one","Product count changes from 2 to 1; OOP live count matches"
+T12,Task B,"Copy and assign an OOP product","Copy increments live count; assignment does not; destruction decrements"

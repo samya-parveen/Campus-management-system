@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Sign in | Campus Store</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+  </head>
+  <body class="login-page">
+    <main class="login-layout">
+      <section class="login-story">
+        <a class="brand brand-light" href="index.html">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span><strong>Campus Store</strong><small>Management suite</small></span>
+        </a>
+        <div class="story-copy">
+          <p class="eyebrow">THE STORE, SIMPLIFIED</p>
+          <h1>Good things<br />happen on campus.</h1>
+          <p>Keep products, checkout, and daily store performance moving together.</p>
+        </div>
+        <div class="story-foot">A calmer way to run your campus store.</div>
+      </section>
+      <section class="login-panel">
+        <div class="login-box">
+          <span class="mobile-brand brand-mark" aria-hidden="true">C</span>
+          <p class="eyebrow" id="authEyebrow">WELCOME BACK</p>
+          <h2 id="authHeading">Sign in to your store</h2>
+          <p class="muted" id="authDescription">Your account takes you to the right campus workspace.</p>
+          <div class="auth-tabs" role="tablist" aria-label="Account options">
+            <button id="signInTab" class="auth-tab active" type="button" role="tab" aria-selected="true">Sign in</button>
+            <button id="createAccountTab" class="auth-tab" type="button" role="tab" aria-selected="false">Create account</button>
+          </div>
+          <form id="loginForm" class="stack-form">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@campus.edu" autocomplete="username" required />
+            <label for="password">Password</label>
+            <div class="password-field">
+              <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+              <button id="togglePassword" class="password-toggle" type="button" aria-label="Show password">Show</button>
+            </div>
+            <p id="loginError" class="form-message" role="alert" hidden></p>
+            <button class="button button-primary button-wide" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          </form>
+          <form id="registerForm" class="stack-form" hidden>
+            <label for="registerName">Full name</label>
+            <input id="registerName" name="name" type="text" minlength="2" maxlength="70" autocomplete="name" placeholder="Your full name" required />
+            <label for="registerEmail">Email address</label>
+            <input id="registerEmail" name="email" type="email" maxlength="120" autocomplete="email" placeholder="you@campus.edu" required />
+            <label for="registerPhone">Phone number <span class="optional-label">optional</span></label>
+            <input id="registerPhone" name="phone" type="tel" maxlength="20" autocomplete="tel" placeholder="Your contact number" />
+            <label for="registerPassword">Create password</label>
+            <input id="registerPassword" name="password" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required />
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Enter your password again" required />
+            <p id="registerError" class="form-message" role="alert" hidden></p>
+            <button class="button button-primary button-wide" type="submit">Create customer account <span aria-hidden="true">→</span></button>
+            <p class="account-role-note">New accounts are for customer shopping. Admin access is provided by your store administrator.</p>
+          </form>
+          <div id="demoNote" class="demo-note">
+            <strong>Store administrator</strong>
+            <span>Admin demo · demo@campus.edu / campus123</span>
+          </div>
+          <p class="login-privacy">Campus Store local demo · Accounts and orders are stored in the SQLite database.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

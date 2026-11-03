@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Your order | Campus Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/store.css" />
+    <script src="../js/api.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/store.js" defer></script>
+  </head>
+  <body class="store-page">
+    <header class="store-header"><a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>YOUR CAMPUS, YOUR STORE</small></span></a><nav class="store-nav" aria-label="Customer navigation"><a class="store-nav-link" href="index.html">Shop</a><a class="store-nav-link" href="orders.html">My orders</a><a class="store-nav-link" href="../profile.html">My profile</a><button class="store-nav-link" type="button" data-logout>Sign out</button></nav></header>
+    <main class="order-confirmation-wrap">
+      <section id="customerOrderDetails" class="order-confirmation panel">
+        <div class="order-success-mark">✓</div><p class="eyebrow">THAT'S A WRAP</p><h1>Thanks for your order, <span id="orderCustomerName">friend</span>.</h1><p class="order-thanks">We’ve saved your order. Here’s the little note to keep handy.</p>
+        <div class="order-reference"><span>ORDER NUMBER</span><strong id="orderNumber">—</strong><button id="copyOrderNumber" class="copy-order-button" type="button">Copy</button></div>
+        <div class="order-details-grid"><div><small>Collection</small><strong id="orderFulfillment">Campus pickup</strong></div><div><small>Payment</small><strong id="orderPayment">Pay at pickup</strong></div><div><small>Order total</small><strong id="orderTotal">₹0</strong></div><div><small>Order lookup email</small><strong id="orderEmail">—</strong></div></div>
+        <div id="orderDeliveryNote" class="order-delivery-note" hidden></div>
+        <div id="orderTotalBreakdown" class="order-total-breakdown"></div>
+        <section class="order-items-panel"><h2>In your bag</h2><div id="orderItems"></div></section>
+        <p class="order-demo-note">Payment is not processed online in this demo. Bring your order number when you collect your items.</p>
+        <div class="order-actions"><a class="button button-primary" href="index.html">Back to the store <span aria-hidden="true">→</span></a><a class="order-history-link" href="orders.html">Look up another order</a></div>
+      </section>
+      <section id="missingOrder" class="order-confirmation panel" hidden><div class="order-success-mark order-warning-mark">?</div><p class="eyebrow">LET'S FIND IT</p><h1>We couldn't find that order.</h1><p class="order-thanks">Check the order number in your confirmation, or look up your orders with your email address.</p><a class="button button-primary" href="orders.html">Look up my order <span aria-hidden="true">→</span></a></section>
+    </main>
+    <footer class="store-footer"><a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>A LITTLE BIT OF CAMPUS</small></span></a><span>Questions? Visit us at the campus store.</span><a href="orders.html">Track another order</a></footer>
+  </body>
+</html>

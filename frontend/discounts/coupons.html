@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Coupon codes | Campus Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <script src="../js/api.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/promotions.js" defer></script>
+  </head>
+  <body class="app-page">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../dashboard.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span></a>
+        <p class="nav-caption">WORKSPACE</p>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../dashboard.html"><span class="nav-icon">⌂</span>Overview</a>
+          <a class="nav-link" href="../products/products.html"><span class="nav-icon">▦</span>Products</a>
+          <a class="nav-link" href="../billing/billing.html"><span class="nav-icon">▤</span>Billing <span class="nav-count" id="navCartCount">0</span></a>
+          <a class="nav-link" href="discounts.html"><span class="nav-icon">％</span>Discounts</a>
+          <a class="nav-link" href="../reports/reports.html"><span class="nav-icon">↗</span>Reports</a>
+          <a class="nav-link" href="../audit.html"><span class="nav-icon">◷</span>Audit log</a>
+          <a class="nav-link" href="../profile.html"><span class="nav-icon">♙</span>My profile</a>
+        </nav>
+        <div class="sidebar-bottom"><div class="sidebar-tip"><span class="tip-icon">✦</span><strong>Store tip</strong><p>Customers can enter coupon codes at checkout.</p></div><button class="nav-link logout-button" type="button" data-logout><span class="nav-icon">↪</span>Sign out</button><div class="sidebar-user"><span class="avatar" id="sidebarAvatar">S</span><span><strong id="sidebarName">Store Admin</strong><small>Store administrator</small></span></div></div>
+      </aside>
+      <main class="app-main">
+        <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Discounts <span>/</span> Coupon codes</div><div class="topbar-actions"><span class="today-label" id="todayLabel"></span><span class="avatar avatar-small" id="topAvatar">S</span></div></header>
+        <div class="page-content">
+          <section class="page-heading"><div><p class="eyebrow">SHAREABLE SAVINGS</p><h1>Coupon codes</h1><p>Give customers a code they can use in-store or online.</p></div></section>
+          <nav class="module-tabs" aria-label="Discount management"><a class="module-tab" href="discounts.html">Product discounts</a><a class="module-tab active" href="coupons.html">Coupon codes</a></nav>
+          <section class="discounts-layout">
+            <section class="panel manager-form-panel"><div class="panel-heading"><div><p class="eyebrow">NEW COUPON</p><h2>Create a coupon code</h2></div><span class="form-step">✦</span></div>
+              <form id="couponForm">
+                <input id="editingCouponCode" type="hidden" />
+                <div class="form-grid">
+                  <div class="form-field"><label for="couponCode">Coupon code</label><input id="couponCode" class="form-control code-input" maxlength="20" placeholder="WELCOME10" required /></div>
+                  <div class="form-field"><label for="couponType">Discount type</label><select id="couponType" class="form-control"><option value="percentage">Percentage off</option><option value="fixed">Fixed amount off (₹)</option></select></div>
+                  <div class="form-field"><label for="couponValue">Discount value</label><input id="couponValue" class="form-control" type="number" min="1" step="1" placeholder="10" required /></div>
+                  <div class="form-field"><label for="couponCategory">Applies to</label><select id="couponCategory" class="form-control"><option value="All">All products</option><option value="Book">Books</option><option value="Accessory">Accessories</option><option value="Stationery">Stationery</option></select></div>
+                  <div class="form-field"><label for="couponMinimum">Minimum purchase (₹)</label><input id="couponMinimum" class="form-control" type="number" min="0" step="1" value="0" required /></div>
+                  <div class="form-field"><label for="couponLimit">Redemption limit <span class="optional-label">0 = unlimited</span></label><input id="couponLimit" class="form-control" type="number" min="0" step="1" value="0" required /></div>
+                  <div class="form-field form-full"><label for="couponExpiry">Expires on <span class="optional-label">leave empty for no expiry</span></label><input id="couponExpiry" class="form-control" type="date" /></div>
+                </div>
+                <p id="couponError" class="form-message" role="alert" hidden></p>
+                <div class="form-actions"><button id="cancelCouponEdit" class="button button-secondary" type="button" hidden>Cancel edit</button><button class="button button-primary" type="submit">Save coupon <span aria-hidden="true">→</span></button></div>
+              </form>
+            </section>
+            <section class="panel manager-list-panel"><div class="panel-heading"><div><p class="eyebrow">READY TO SHARE</p><h2>Active &amp; past codes</h2></div><span id="couponCount" class="count-pill">0</span></div>
+              <p class="manager-help">Coupons are shared between the staff checkout and the customer storefront.</p>
+              <div id="couponList" class="manager-list"></div>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

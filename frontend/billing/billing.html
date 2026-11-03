@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Billing | Campus Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/billing.css" />
+    <script src="../js/api.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/billing.js" defer></script>
+  </head>
+  <body class="app-page">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../dashboard.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span></a>
+        <p class="nav-caption">WORKSPACE</p>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../dashboard.html"><span class="nav-icon">⌂</span>Overview</a>
+          <a class="nav-link" href="../products/products.html"><span class="nav-icon">▦</span>Products</a>
+          <a class="nav-link active" href="billing.html"><span class="nav-icon">▤</span>Billing <span class="nav-count" id="navCartCount">0</span></a>
+          <a class="nav-link" href="../discounts/discounts.html"><span class="nav-icon">％</span>Discounts</a>
+          <a class="nav-link" href="../reports/reports.html"><span class="nav-icon">↗</span>Reports</a>
+          <a class="nav-link" href="../audit.html"><span class="nav-icon">◷</span>Audit log</a>
+          <a class="nav-link" href="../profile.html"><span class="nav-icon">♙</span>My profile</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-tip"><span class="tip-icon">✦</span><strong>Store tip</strong><p>Review your cart before completing a sale.</p></div>
+          <button class="nav-link logout-button" type="button" data-logout><span class="nav-icon">↪</span>Sign out</button>
+          <div class="sidebar-user"><span class="avatar" id="sidebarAvatar">S</span><span><strong id="sidebarName">Store Admin</strong><small>Store administrator</small></span></div>
+        </div>
+      </aside>
+      <main class="app-main">
+        <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Billing</div><div class="topbar-actions"><span class="today-label" id="todayLabel"></span><span class="avatar avatar-small" id="topAvatar">S</span></div></header>
+        <div class="page-content">
+          <section class="page-heading"><div><p class="eyebrow">POINT OF SALE</p><h1>New sale</h1><p>Build a basket, apply a discount, and check out.</p></div><span class="sale-status"><span></span>Ready for checkout</span></section>
+          <div class="billing-layout">
+            <section class="panel billing-main">
+              <div class="panel-heading"><div><p class="eyebrow">YOUR CUSTOMER'S BASKET</p><h2>Sale items</h2></div><span class="basket-count" id="basketItemCount">0 items</span></div>
+              <form id="addToCartForm" class="add-item-row">
+                <label class="sr-only" for="productSelect">Choose a product</label><select id="productSelect" class="form-control" required><option value="">Choose a product to add…</option></select>
+                <label class="sr-only" for="itemQuantity">Quantity</label><input id="itemQuantity" class="form-control" type="number" min="1" step="1" value="1" required />
+                <button class="button button-primary" type="submit">Add item <span aria-hidden="true">＋</span></button>
+              </form>
+              <div class="cart-toolbar"><span id="cartHint">Add products from your inventory.</span><button id="clearCart" type="button">Clear basket</button></div>
+              <div class="table-wrap"><table class="data-table cart-table"><thead><tr><th>Product</th><th>Price</th><th>Quantity</th><th class="align-right">Amount</th><th></th></tr></thead><tbody id="cartTable"></tbody></table></div>
+            </section>
+            <aside class="panel checkout-panel">
+              <div class="panel-heading"><div><p class="eyebrow">ORDER SUMMARY</p><h2>Complete sale</h2></div><span aria-hidden="true">▤</span></div>
+              <div class="checkout-line"><span>Items subtotal</span><strong id="subtotal">₹0</strong></div>
+              <div class="discount-row"><label class="sr-only" for="couponCode">Discount code</label><input id="couponCode" class="form-control" type="text" placeholder="Discount code" autocomplete="off" /><button id="applyCoupon" type="button">Apply</button></div>
+              <p id="couponMessage" class="coupon-message" aria-live="polite">Available coupon codes are checked when you apply.</p>
+              <div class="checkout-line"><span>Discount</span><strong id="discountAmount">−₹0</strong></div>
+              <div class="checkout-line total-line"><span>Total due</span><strong id="totalAmount">₹0</strong></div>
+              <label class="payment-label" for="paymentMethod">Payment method</label>
+              <select id="paymentMethod" class="form-control payment-select"><option value="UPI">UPI</option><option value="Cash">Cash</option><option value="Card">Card</option></select>
+              <button id="completeSale" class="button button-primary button-wide" type="button">Complete sale <span aria-hidden="true">→</span></button>
+              <p class="checkout-note">Completing the sale updates stock and saves this transaction in your reports.</p>
+              <section id="printReceipt" class="receipt-card" hidden><h3>Sale complete!</h3><p id="receiptDetails"></p><button id="printReceiptButton" class="button button-secondary" type="button">Print receipt</button></section>
+            </aside>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

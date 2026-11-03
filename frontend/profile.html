@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>My profile | Campus Store</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/store.css" />
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/profile.js" defer></script>
+  </head>
+  <body>
+    <div id="adminProfile" class="app-page" hidden>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <a class="brand" href="dashboard.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span></a>
+          <p class="nav-caption">WORKSPACE</p>
+          <nav class="side-nav" aria-label="Main navigation">
+            <a class="nav-link" href="dashboard.html"><span class="nav-icon">⌂</span>Overview</a>
+            <a class="nav-link" href="products/products.html"><span class="nav-icon">▦</span>Products</a>
+            <a class="nav-link" href="billing/billing.html"><span class="nav-icon">▤</span>Billing</a>
+            <a class="nav-link" href="discounts/discounts.html"><span class="nav-icon">％</span>Discounts</a>
+            <a class="nav-link" href="reports/reports.html"><span class="nav-icon">↗</span>Reports</a>
+            <a class="nav-link" href="audit.html"><span class="nav-icon">◷</span>Audit log</a>
+            <a class="nav-link active" href="profile.html"><span class="nav-icon">♙</span>My profile</a>
+          </nav>
+          <div class="sidebar-bottom">
+            <div class="sidebar-tip"><span class="tip-icon">✦</span><strong>Your account</strong><p>Keep your contact details and password up to date.</p></div>
+            <button class="nav-link logout-button" type="button" data-logout><span class="nav-icon">↪</span>Sign out</button>
+            <div class="sidebar-user"><span class="avatar" id="adminAvatar">C</span><span><strong id="adminSidebarName">Store Admin</strong><small>Store administrator</small></span></div>
+          </div>
+        </aside>
+        <main class="app-main">
+          <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> My profile</div><div class="topbar-actions"><span class="today-label" id="adminToday"></span><span class="avatar avatar-small" id="adminTopAvatar">C</span></div></header>
+          <div class="page-content profile-page-content">
+            <section class="page-heading"><div><p class="eyebrow">YOUR ACCOUNT</p><h1>My profile</h1><p>Manage your administrator details and sign-in password.</p></div></section>
+            <section class="panel profile-card">
+              <div class="panel-heading"><div><p class="eyebrow">PERSONAL DETAILS</p><h2>Profile information</h2></div><span class="role-badge">Store administrator</span></div>
+              <form id="adminProfileForm" class="profile-form">
+                <div class="form-grid">
+                  <div class="form-field"><label for="adminName">Full name</label><input id="adminName" class="form-control" type="text" minlength="2" maxlength="70" autocomplete="name" required /></div>
+                  <div class="form-field"><label for="adminEmail">Email address</label><input id="adminEmail" class="form-control" type="email" readonly /><small>Email is the account sign-in ID and can't be changed here.</small></div>
+                  <div class="form-field"><label for="adminPhone">Phone number</label><input id="adminPhone" class="form-control" type="tel" maxlength="20" autocomplete="tel" placeholder="Add your contact number" /></div>
+                </div>
+                <p id="adminProfileError" class="form-message" role="alert" hidden></p>
+                <div class="form-actions"><button class="button button-primary" type="submit">Save changes <span aria-hidden="true">→</span></button></div>
+              </form>
+            </section>
+            <section class="panel profile-card">
+              <div class="panel-heading"><div><p class="eyebrow">ACCOUNT SECURITY</p><h2>Change password</h2></div></div>
+              <form id="adminPasswordForm" class="profile-form">
+                <div class="form-grid">
+                  <div class="form-field"><label for="adminCurrentPassword">Current password</label><input id="adminCurrentPassword" class="form-control" type="password" autocomplete="current-password" required /></div>
+                  <div class="form-field"><label for="adminNewPassword">New password</label><input id="adminNewPassword" class="form-control" type="password" minlength="8" autocomplete="new-password" required /><small>Use at least 8 characters.</small></div>
+                  <div class="form-field"><label for="adminConfirmPassword">Confirm new password</label><input id="adminConfirmPassword" class="form-control" type="password" minlength="8" autocomplete="new-password" required /></div>
+                </div>
+                <p id="adminPasswordError" class="form-message" role="alert" hidden></p>
+                <div class="form-actions"><button class="button button-secondary" type="submit">Update password</button></div>
+              </form>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="customerProfile" class="store-page customer-profile-page" hidden>
+      <header class="store-header">
+        <a class="brand store-brand" href="store/index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>YOUR CAMPUS, YOUR STORE</small></span></a>
+        <nav class="store-nav" aria-label="Customer navigation"><a class="store-nav-link" href="store/index.html">Shop</a><a class="store-nav-link" href="store/orders.html">My orders</a><a class="store-nav-link active" href="profile.html">My profile</a><button class="store-nav-link" type="button" data-logout>Sign out</button><a class="button button-primary store-cart-link" href="store/cart.html">Your basket</a></nav>
+      </header>
+      <main class="customer-profile-main">
+        <div class="store-breadcrumb"><a href="store/index.html">Campus store</a> <span>/</span> My profile</div>
+        <section class="customer-profile-welcome"><div class="profile-avatar" id="customerAvatar">C</div><div><p class="eyebrow">YOUR CAMPUS ACCOUNT</p><h1>Welcome, <span id="customerGreeting">there</span>.</h1><p>Update your details and keep your account secure.</p></div></section>
+        <section class="panel profile-card customer-profile-card">
+          <div class="panel-heading"><div><p class="eyebrow">PERSONAL DETAILS</p><h2>Profile information</h2></div><span class="role-badge">Customer account</span></div>
+          <form id="customerProfileForm" class="profile-form">
+            <div class="form-grid">
+              <div class="form-field"><label for="customerName">Full name</label><input id="customerName" class="form-control" type="text" minlength="2" maxlength="70" autocomplete="name" required /></div>
+              <div class="form-field"><label for="customerEmail">Email address</label><input id="customerEmail" class="form-control" type="email" readonly /><small>Email is the account sign-in ID and can't be changed here.</small></div>
+              <div class="form-field"><label for="customerPhone">Phone number</label><input id="customerPhone" class="form-control" type="tel" maxlength="20" autocomplete="tel" placeholder="Add your contact number" /></div>
+            </div>
+            <p id="customerProfileError" class="form-message" role="alert" hidden></p>
+            <div class="form-actions"><button class="button button-primary" type="submit">Save changes <span aria-hidden="true">→</span></button></div>
+          </form>
+        </section>
+        <section class="panel profile-card customer-profile-card">
+          <div class="panel-heading"><div><p class="eyebrow">ACCOUNT SECURITY</p><h2>Change password</h2></div></div>
+          <form id="customerPasswordForm" class="profile-form">
+            <div class="form-grid">
+              <div class="form-field"><label for="customerCurrentPassword">Current password</label><input id="customerCurrentPassword" class="form-control" type="password" autocomplete="current-password" required /></div>
+              <div class="form-field"><label for="customerNewPassword">New password</label><input id="customerNewPassword" class="form-control" type="password" minlength="8" autocomplete="new-password" required /><small>Use at least 8 characters.</small></div>
+              <div class="form-field"><label for="customerConfirmPassword">Confirm new password</label><input id="customerConfirmPassword" class="form-control" type="password" minlength="8" autocomplete="new-password" required /></div>
+            </div>
+            <p id="customerPasswordError" class="form-message" role="alert" hidden></p>
+            <div class="form-actions"><button class="button button-secondary" type="submit">Update password</button></div>
+          </form>
+        </section>
+      </main>
+      <footer class="store-footer"><a class="brand store-brand" href="store/index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>A LITTLE BIT OF CAMPUS</small></span></a><span>Your campus, all in one place.</span><a href="store/orders.html">View my orders</a></footer>
+    </div>
+  </body>
+</html>

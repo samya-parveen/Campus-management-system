@@ -1,0 +1,17 @@
+Metric,Procedural,OOP,Interpretation / evidence
+Compiler and version,MinGW GCC 6.3.0,MinGW GCC 6.3.0,Same compiler used for both builds
+Hardware / operating system,Windows,Windows,Hardware details not recorded
+Programmer or team,,,
+Initial development time (min),,,
+CR1 change time (min),,,
+CR2 change time (min),,,
+"Lines of code (nonblank, noncomment)",,,
+Approx. duplicate lines (%),,,
+CR1 existing functions modified (count),,,
+CR2 existing functions modified (count),,,
+CR1 new/modified source files (count),,,
+CR2 new/modified source files (count),,,
+Acceptance tests passed / total,10/10,"10/10 + OOP copy-safety 1/1",Runner output from this workspace; see tests/acceptance-cases.csv
+Fix-and-retest time (min),,,
+Total measured effort (min),,,
+Change-time reduction (%),,,

@@ -3,380 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSMS - Add Product</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
-
-      body {
-        display: flex;
-        min-height: 100vh;
-        background: #f1f5f9;
-      }
-
-      /* Sidebar */
-
-      .sidebar {
-        width: 240px;
-        background: #172554;
-        color: white;
-        padding: 25px 20px;
-        flex-shrink: 0;
-      }
-
-      .sidebar h2 {
-        font-size: 28px;
-        margin-bottom: 8px;
-      }
-
-      .sidebar p {
-        color: #cbd5e1;
-        font-size: 12px;
-        margin-bottom: 35px;
-      }
-
-      .sidebar a {
-        display: block;
-        padding: 14px;
-        margin-bottom: 10px;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-      }
-
-      .sidebar a:hover,
-      .sidebar a.active {
-        background: #2563eb;
-      }
-
-      /* Main Content */
-
-      .main-content {
-        flex: 1;
-        min-width: 0;
-        padding: 30px;
-      }
-
-      header h1 {
-        color: #172554;
-        margin-bottom: 8px;
-      }
-
-      header p {
-        color: #64748b;
-      }
-
-      /* Form */
-
-      .form-section {
-        max-width: 750px;
-        background: white;
-        padding: 30px;
-        margin-top: 30px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px #00000010;
-      }
-
-      .form-section h2 {
-        color: #172554;
-        margin-bottom: 25px;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-        color: #334155;
-      }
-
-      input,
-      select {
-        width: 100%;
-        padding: 13px;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        outline: none;
-      }
-
-      input:focus,
-      select:focus {
-        border-color: #2563eb;
-      }
-
-      .buttons {
-        display: flex;
-        gap: 12px;
-        margin-top: 25px;
-      }
-
-      button,
-      .cancel-btn {
-        padding: 12px 20px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: bold;
-        text-decoration: none;
-      }
-
-      .save-btn {
-        background: #2563eb;
-        color: white;
-      }
-
-      .cancel-btn {
-        background: #64748b;
-        color: white;
-      }
-
-      button:hover {
-        opacity: 0.9;
-      }
-
-      @media (max-width: 768px) {
-        .sidebar {
-          width: 160px;
-          padding: 15px 10px;
-        }
-
-        .main-content {
-          padding: 15px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        body {
-          display: block;
-        }
-
-        .sidebar {
-          width: 100%;
-          min-height: auto;
-        }
-
-        .sidebar a {
-          display: inline-block;
-          padding: 10px;
-        }
-      }
-    </style>
+    <meta name="theme-color" content="#153d32" />
+    <title>Add product | Campus Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <script src="../js/api.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/product.js" defer></script>
   </head>
-
-  <body>
-    <!-- Sidebar -->
-
-    <aside class="sidebar">
-      <h2>CSMS</h2>
-      <p>Campus Store Management</p>
-
-      <a href="../dashboard.html">Dashboard</a>
-      <a href="products.html" class="active">Products</a>
-      <a href="../billing/">Billing</a>
-      <a href="../reports/">Reports</a>
-      <a href="../login.html">Logout</a>
-    </aside>
-
-    <!-- Main Content -->
-
-    <main class="main-content">
-      <header>
-        <h1 id="pageTitle">Add New Product</h1>
-        <p>Add or update campus store products.</p>
-      </header>
-
-      <section class="form-section">
-        <h2>Product Details</h2>
-
-        <form id="productForm">
-          <div class="form-group">
-            <label for="productId">Product ID</label>
-            <input
-              type="number"
-              id="productId"
-              placeholder="Enter Product ID"
-              min="1"
-              step="1"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="productName">Product Name</label>
-            <input
-              type="text"
-              id="productName"
-              placeholder="Enter Product Name"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="category">Category</label>
-
-            <select id="category" required>
-              <option value="">Select Category</option>
-              <option value="Book">Book</option>
-              <option value="Accessory">Accessory</option>
-              <option value="Stationery">Stationery</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="productPrice">Base Price (₹)</label>
-            <input
-              type="number"
-              id="productPrice"
-              placeholder="Enter Price"
-              min="0"
-              step="0.01"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="productQuantity">Quantity</label>
-            <input
-              type="number"
-              id="productQuantity"
-              placeholder="Enter Quantity"
-              min="0"
-              step="1"
-              required
-            />
-          </div>
-
-          <div class="buttons">
-            <button type="submit" class="save-btn">Save Product</button>
-
-            <a href="products.html" class="cancel-btn"> Cancel </a>
-          </div>
-        </form>
-      </section>
-    </main>
-
-    <script>
-      // Load Products
-
-      let products = JSON.parse(localStorage.getItem("csmsProducts")) || [];
-
-      // Get URL parameter for editing
-
-      const params = new URLSearchParams(window.location.search);
-      const editId = params.get("id");
-
-      const form = document.getElementById("productForm");
-
-      const idField = document.getElementById("productId");
-      const nameField = document.getElementById("productName");
-      const categoryField = document.getElementById("category");
-      const priceField = document.getElementById("productPrice");
-      const quantityField = document.getElementById("productQuantity");
-
-      // Edit existing product
-
-      if (editId !== null) {
-        const product = products.find((p) => p.id === Number(editId));
-
-        if (!product) {
-          alert("Product not found!");
-          location.href = "products.html";
-        } else {
-          document.getElementById("pageTitle").textContent = "Edit Product";
-
-          idField.value = product.id;
-          idField.disabled = true;
-
-          nameField.value = product.name;
-          categoryField.value = product.category;
-          priceField.value = product.price;
-          quantityField.value = product.quantity;
-        }
-      }
-
-      // Save Product
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const id = Number(idField.value);
-        const name = nameField.value.trim();
-        const category = categoryField.value;
-        const price = Number(priceField.value);
-        const quantity = Number(quantityField.value);
-
-        // Validation
-
-        if (
-          !Number.isSafeInteger(id) ||
-          id <= 0 ||
-          name === "" ||
-          category === "" ||
-          !Number.isFinite(price) ||
-          price < 0 ||
-          !Number.isInteger(quantity) ||
-          quantity < 0
-        ) {
-          alert("Please enter valid product details!");
-          return;
-        }
-
-        // Add new product
-
-        if (editId === null) {
-          const duplicate = products.some((p) => p.id === id);
-
-          if (duplicate) {
-            alert("Product ID already exists!");
-            return;
-          }
-
-          products.push({
-            id: id,
-            name: name,
-            category: category,
-            price: price,
-            quantity: quantity,
-          });
-
-          alert("Product added successfully!");
-        } else {
-          // Update product
-
-          const index = products.findIndex((p) => p.id === Number(editId));
-
-          if (index === -1) {
-            alert("Product not found!");
-            return;
-          }
-
-          products[index] = {
-            id: Number(editId),
-            name: name,
-            category: category,
-            price: price,
-            quantity: quantity,
-          };
-
-          alert("Product updated successfully!");
-        }
-
-        // Save in browser storage
-
-        localStorage.setItem("csmsProducts", JSON.stringify(products));
-
-        // Go back to product list
-
-        window.location.href = "products.html";
-      });
-    </script>
+  <body class="app-page">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="../dashboard.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span></a>
+        <p class="nav-caption">WORKSPACE</p>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../dashboard.html"><span class="nav-icon">⌂</span>Overview</a>
+          <a class="nav-link active" href="products.html"><span class="nav-icon">▦</span>Products</a>
+          <a class="nav-link" href="../billing/billing.html"><span class="nav-icon">▤</span>Billing <span class="nav-count" id="navCartCount">0</span></a>
+          <a class="nav-link" href="../discounts/discounts.html"><span class="nav-icon">％</span>Discounts</a>
+          <a class="nav-link" href="../reports/reports.html"><span class="nav-icon">↗</span>Reports</a>
+          <a class="nav-link" href="../audit.html"><span class="nav-icon">◷</span>Audit log</a>
+          <a class="nav-link" href="../profile.html"><span class="nav-icon">♙</span>My profile</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-tip"><span class="tip-icon">✦</span><strong>Store tip</strong><p>Keep an eye on low stock so your bestsellers stay on the shelf.</p></div>
+          <button class="nav-link logout-button" type="button" data-logout><span class="nav-icon">↪</span>Sign out</button>
+          <div class="sidebar-user"><span class="avatar" id="sidebarAvatar">S</span><span><strong id="sidebarName">Store Admin</strong><small>Store administrator</small></span></div>
+        </div>
+      </aside>
+      <main class="app-main">
+        <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <a href="products.html">Products</a> <span>/</span> Details</div><div class="topbar-actions"><span class="today-label" id="todayLabel"></span><span class="avatar avatar-small" id="topAvatar">S</span></div></header>
+        <div class="page-content">
+          <section class="page-heading"><div><p class="eyebrow">INVENTORY MANAGEMENT</p><h1 id="pageTitle">Add a product</h1><p>Add something new to your campus store catalog.</p></div><a class="button button-secondary" href="products.html"><span aria-hidden="true">←</span> Back to products</a></section>
+          <section class="panel product-form-panel">
+            <div class="panel-heading"><div><p class="eyebrow">PRODUCT DETAILS</p><h2>Tell us about this item</h2></div><span class="form-step">01 <span>/</span> 01</span></div>
+            <form id="productForm">
+              <div class="form-grid">
+                <div class="form-field"><label for="productId">Product ID</label><input class="form-control" id="productId" name="productId" type="number" min="1" step="1" placeholder="For example, 109" required /><small>A unique number for this item.</small></div>
+                <div class="form-field"><label for="productName">Product name</label><input class="form-control" id="productName" name="productName" type="text" maxlength="70" placeholder="For example, Campus notebook" required /><small>Use a name your customers will recognise.</small></div>
+                <div class="form-field"><label for="category">Category</label><select class="form-control" id="category" name="category" required><option value="">Choose a category</option><option value="Book">Books</option><option value="Accessory">Accessories</option><option value="Stationery">Stationery</option></select></div>
+                <div class="form-field"><label for="productPrice">Selling price</label><input class="form-control" id="productPrice" name="productPrice" type="number" min="0.01" step="0.01" placeholder="0.00" required /><small>Price in Indian rupees (₹).</small></div>
+                <div class="form-field"><label for="productQuantity">Available quantity</label><input class="form-control" id="productQuantity" name="productQuantity" type="number" min="0" step="1" placeholder="0" required /><small>How many units are on your shelves?</small></div>
+              </div>
+              <p id="productFormError" class="form-message" role="alert" hidden></p>
+              <div class="form-actions"><a class="button button-secondary" href="products.html">Cancel</a><button class="button button-primary" type="submit">Save product <span aria-hidden="true">→</span></button></div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

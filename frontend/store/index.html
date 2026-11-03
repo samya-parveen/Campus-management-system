@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Shop the campus store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/store.css" />
+    <script src="../js/api.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/store.js" defer></script>
+  </head>
+  <body class="store-page">
+    <header class="store-header">
+      <a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>YOUR CAMPUS, YOUR STORE</small></span></a>
+      <nav class="store-nav" aria-label="Customer navigation"><a class="store-nav-link active" href="index.html">Shop</a><a class="store-nav-link" href="orders.html">My orders</a><a class="store-nav-link" href="../profile.html">My profile</a><button class="store-nav-link" type="button" data-logout>Sign out</button><a class="button button-primary store-cart-link" href="cart.html">Your basket <span id="customerCartCount" class="cart-badge">0</span></a></nav>
+    </header>
+    <main>
+      <section class="shop-hero"><div><p class="eyebrow">MADE FOR CAMPUS LIFE</p><h1>A good day starts<br />with <span>the little things.</span></h1><p>Course essentials, campus favourites, and your next great read — just a few clicks away.</p><a class="button button-primary" href="#catalog">Find your thing <span aria-hidden="true">↓</span></a><div class="shop-trust"><span>✓ Student-ready essentials</span><span>✓ Pick up right on campus</span></div></div><div class="hero-art" aria-hidden="true"><div class="hero-sun"></div><div class="hero-book"><span>READ<br />GROW<br />REPEAT</span></div><div class="hero-notebook"></div><div class="hero-pen"></div><span class="hero-sparkle sparkle-one">✦</span><span class="hero-sparkle sparkle-two">✳</span><span class="hero-sticker">CAMPUS<br />FAVOURITE</span></div></section>
+      <section id="storeCouponOffer" class="offer-strip" hidden><span class="offer-sparkle">✦</span><span><strong>A little extra for your next order.</strong> <span id="storeCouponOfferText">Save with a campus offer.</span> Use <b id="storeCouponCode"></b>.</span><a href="cart.html">Shop and save <span aria-hidden="true">→</span></a></section>
+      <section id="catalog" class="store-catalog">
+        <div class="catalog-intro"><div><p class="eyebrow">THE CAMPUS EDIT</p><h2>Find your new favourite.</h2><p>Good things for lectures, late nights, and everything in between.</p></div><div class="customer-search"><label class="sr-only" for="storeSearch">Search the store</label><span aria-hidden="true">⌕</span><input id="storeSearch" type="search" placeholder="Search products…" /></div></div>
+        <nav class="store-categories" aria-label="Product categories"><button class="category-chip active" type="button" data-category="All">Everything</button><button class="category-chip" type="button" data-category="Book">Books</button><button class="category-chip" type="button" data-category="Stationery">Stationery</button><button class="category-chip" type="button" data-category="Accessory">Accessories</button></nav>
+        <div id="storeProducts" class="store-product-grid"></div>
+        <p id="storeEmpty" class="store-empty" hidden>No matches just yet. Try a different search.</p>
+      </section>
+      <section class="pickup-banner"><span class="pickup-icon">⌖</span><div><strong>Drop by. Pick up. Get on with your day.</strong><p>Every order can be collected at the campus store — no delivery wait, no extra charge.</p></div><a href="orders.html">Already ordered? <span aria-hidden="true">→</span></a></section>
+    </main>
+    <footer class="store-footer"><a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>A LITTLE BIT OF CAMPUS</small></span></a><span>Questions? Visit us at the campus store.</span><a href="#catalog">Browse the store</a></footer>
+  </body>
+</html>

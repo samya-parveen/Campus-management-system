@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Audit log | Campus Store</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/audit.js" defer></script>
+  </head>
+  <body class="app-page">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span></a>
+        <p class="nav-caption">WORKSPACE</p>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="dashboard.html"><span class="nav-icon">⌂</span>Overview</a>
+          <a class="nav-link" href="products/products.html"><span class="nav-icon">▦</span>Products</a>
+          <a class="nav-link" href="billing/billing.html"><span class="nav-icon">▤</span>Billing</a>
+          <a class="nav-link" href="discounts/discounts.html"><span class="nav-icon">％</span>Discounts</a>
+          <a class="nav-link" href="reports/reports.html"><span class="nav-icon">↗</span>Reports</a>
+          <a class="nav-link active" href="audit.html"><span class="nav-icon">◷</span>Audit log</a>
+          <a class="nav-link" href="profile.html"><span class="nav-icon">♙</span>My profile</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-tip"><span class="tip-icon">✦</span><strong>Activity history</strong><p>Review and export the latest changes made in this browser.</p></div>
+          <button class="nav-link logout-button" type="button" data-logout><span class="nav-icon">↪</span>Sign out</button>
+          <div class="sidebar-user"><span class="avatar" id="sidebarAvatar">S</span><span><strong id="sidebarName">Store Admin</strong><small>Store administrator</small></span></div>
+        </div>
+      </aside>
+      <main class="app-main">
+        <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Audit log</div><div class="topbar-actions"><span class="today-label" id="todayLabel"></span><span class="avatar avatar-small" id="topAvatar">S</span></div></header>
+        <div class="page-content">
+          <section class="page-heading"><div><p class="eyebrow">ACCOUNTABILITY</p><h1>Audit log</h1><p>See who changed products, promotions, and sales activity.</p></div><button id="exportAudit" class="button button-secondary" type="button">Export CSV <span aria-hidden="true">↓</span></button></section>
+          <section class="audit-summary-grid" aria-label="Audit summary">
+            <article class="metric-card"><div class="metric-top"><span class="metric-icon green-icon">◷</span><span class="metric-trend">History</span></div><p>Recorded activities</p><strong id="auditTotal">0</strong><small>Up to 1,000 latest events</small></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-icon blue-icon">♙</span><span class="metric-trend neutral-trend">Today</span></div><p>Actions today</p><strong id="auditToday">0</strong><small>Across signed-in accounts</small></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-icon violet-icon">⌕</span><span class="metric-trend neutral-trend">View</span></div><p>Matching activities</p><strong id="auditVisible">0</strong><small>Based on your filters</small></article>
+          </section>
+          <section class="panel audit-panel">
+            <div class="panel-heading audit-panel-heading"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>Store activity</h2></div><span class="report-count"><span id="auditCount">0</span> events</span></div>
+            <div class="audit-controls">
+              <label class="search-control"><span aria-hidden="true">⌕</span><input id="auditSearch" type="search" placeholder="Search action, user, or details…" aria-label="Search audit activity" /></label>
+              <label class="sr-only" for="auditAction">Filter by activity</label><select id="auditAction" class="filter-control"><option value="">All activities</option></select>
+              <label class="sr-only" for="auditPeriod">Filter by date</label><select id="auditPeriod" class="filter-control"><option value="all">Any time</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option></select>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table audit-table"><thead><tr><th>Activity</th><th>Performed by</th><th>Date &amp; time</th></tr></thead><tbody id="auditRows"></tbody></table>
+              <p id="auditEmpty" class="empty-state" hidden>No activity matches these filters.</p>
+            </div>
+          </section>
+          <p class="audit-notice">Audit activity is stored in the local SQLite database. This classroom demo does not provide tamper-proof compliance logging.</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Track your order | Campus Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/store.css" />
+    <script src="../js/api.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/store.js" defer></script>
+  </head>
+  <body class="store-page">
+    <header class="store-header"><a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>YOUR CAMPUS, YOUR STORE</small></span></a><nav class="store-nav" aria-label="Customer navigation"><a class="store-nav-link" href="index.html">Shop</a><a class="store-nav-link active" href="orders.html">My orders</a><a class="store-nav-link" href="../profile.html">My profile</a><button class="store-nav-link" type="button" data-logout>Sign out</button><a class="button button-primary store-cart-link" href="cart.html">Your basket <span id="customerCartCount" class="cart-badge">0</span></a></nav></header>
+    <main class="track-order-page">
+      <div class="store-breadcrumb"><a href="index.html">Campus store</a> <span>/</span> Track your order</div>
+      <section class="track-order-intro"><div class="track-icon">⌖</div><p class="eyebrow">A QUICK CHECK-IN</p><h1>Find your order.</h1><p>Enter the email address you used at checkout. We’ll show orders saved on this device.</p></section>
+      <form id="lookupOrdersForm" class="order-lookup-form"><label class="sr-only" for="lookupEmail">Your checkout email</label><input id="lookupEmail" type="email" autocomplete="email" placeholder="you@campus.edu" required /><button class="button button-primary" type="submit">Find my orders <span aria-hidden="true">→</span></button></form>
+      <p class="lookup-privacy">Your email is only used to find your orders in this browser.</p>
+      <section id="customerOrders" class="customer-orders"></section>
+    </main>
+    <footer class="store-footer"><a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>A LITTLE BIT OF CAMPUS</small></span></a><span>Questions? Visit us at the campus store.</span><a href="index.html">Back to the store</a></footer>
+  </body>
+</html>

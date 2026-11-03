@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d32" />
+    <title>Your basket | Campus Store</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/store.css" />
+    <script src="../js/api.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/store.js" defer></script>
+  </head>
+  <body class="store-page">
+    <header class="store-header"><a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>YOUR CAMPUS, YOUR STORE</small></span></a><nav class="store-nav" aria-label="Customer navigation"><a class="store-nav-link" href="index.html">Keep shopping</a><a class="store-nav-link" href="orders.html">My orders</a><a class="store-nav-link" href="../profile.html">My profile</a><button class="store-nav-link" type="button" data-logout>Sign out</button></nav></header>
+    <main class="store-checkout-page">
+      <div class="store-breadcrumb"><a href="index.html">Campus store</a> <span>/</span> Your basket</div>
+      <div class="store-checkout-heading"><div><p class="eyebrow">ALMOST YOURS</p><h1>Your basket</h1><p>One last look, then it’s yours.</p></div><span id="checkoutCartCount" class="basket-count">0 items</span></div>
+      <div class="customer-checkout-grid">
+        <section class="customer-basket panel"><div class="panel-heading"><div><p class="eyebrow">GOOD CHOICES</p><h2>Items in your basket</h2></div><button id="emptyCustomerCart" class="quiet-action" type="button">Clear basket</button></div><div id="customerCartItems" class="customer-cart-items"></div><a class="continue-shopping" href="index.html"><span aria-hidden="true">←</span> Keep browsing</a></section>
+        <section class="customer-order panel"><div class="panel-heading"><div><p class="eyebrow">PICKUP IS ON US</p><h2>Make it yours</h2></div><span class="checkout-leaf">✦</span></div>
+          <form id="customerOrderForm" class="customer-form">
+            <label for="customerName">Your name</label><input id="customerName" class="form-control" type="text" maxlength="70" autocomplete="name" placeholder="What should we call you?" required />
+            <label for="customerEmail">Email address</label><input id="customerEmail" class="form-control" type="email" maxlength="120" autocomplete="email" placeholder="you@campus.edu" required />
+            <label for="fulfillmentMethod">How would you like it?</label><select id="fulfillmentMethod" class="form-control"><option value="Campus pickup">Pick up at the campus store — free</option><option value="Campus delivery">Campus delivery</option></select>
+            <div id="deliveryAddressField" hidden><label for="deliveryAddress">Campus delivery location</label><input id="deliveryAddress" class="form-control" type="text" maxlength="120" placeholder="Building, room or meeting point" /></div>
+            <label for="customerPayment">Payment</label><select id="customerPayment" class="form-control"><option value="Pay at pickup">Pay at pickup</option><option value="UPI on pickup">UPI at pickup</option><option value="Demo card">Card (demo only — no charge)</option></select>
+            <div class="customer-coupon"><label for="customerCoupon">Have a coupon?</label><div><input id="customerCoupon" class="form-control" type="text" maxlength="20" placeholder="Add a code" /><button id="applyCustomerCoupon" class="coupon-apply" type="button">Apply</button></div><p id="customerCouponMessage" aria-live="polite">Available offers are checked when you apply.</p></div>
+            <div class="customer-totals"><div><span>Items subtotal</span><strong id="customerSubtotal">₹0</strong></div><div><span>Your savings</span><strong id="customerSavings">−₹0</strong></div><div class="customer-grand-total"><span>Total</span><strong id="customerTotal">₹0</strong></div></div>
+            <p class="demo-payment-note">Orders are saved in the campus store database. This demo does not process real payments.</p>
+            <p id="customerOrderError" class="form-message" role="alert" hidden></p>
+            <button id="placeCustomerOrder" class="button button-primary button-wide" type="submit">Place my order <span aria-hidden="true">→</span></button>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer class="store-footer"><a class="brand store-brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>A LITTLE BIT OF CAMPUS</small></span></a><span>Thanks for shopping local. ♡</span><a href="orders.html">Track an order</a></footer>
+  </body>
+</html>
