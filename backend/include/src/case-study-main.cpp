@@ -10,8 +10,10 @@ int main() {
     std::cerr << "Could not load the reference products.\n";
     return 1;
   }
+
   std::cout << store.demoOutput();
   std::cout << store.audit(101) << '\n';
   std::cout << "Live Product objects: " << oop::Product::getProductCount() << '\n';
+
   return 0;
 }
