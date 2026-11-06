@@ -14,39 +14,184 @@
   <body class="app-page">
     <div class="app-shell">
       <aside class="sidebar">
-        <a class="brand" href="../dashboard.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span></a>
+        <a class="brand" href="../dashboard.html"
+          ><span class="brand-mark" aria-hidden="true">C</span
+          ><span
+            ><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span
+          ></a
+        >
         <p class="nav-caption">WORKSPACE</p>
         <nav class="side-nav" aria-label="Main navigation">
-          <a class="nav-link" href="../dashboard.html"><span class="nav-icon">⌂</span>Overview</a>
-          <a class="nav-link active" href="products.html"><span class="nav-icon">▦</span>Products</a>
-          <a class="nav-link" href="../billing/billing.html"><span class="nav-icon">▤</span>Billing <span class="nav-count" id="navCartCount">0</span></a>
-          <a class="nav-link" href="../discounts/discounts.html"><span class="nav-icon">％</span>Discounts</a>
-          <a class="nav-link" href="../reports/reports.html"><span class="nav-icon">↗</span>Reports</a>
-          <a class="nav-link" href="../audit.html"><span class="nav-icon">◷</span>Audit log</a>
-          <a class="nav-link" href="../profile.html"><span class="nav-icon">♙</span>My profile</a>
+          <a class="nav-link" href="../dashboard.html"
+            ><span class="nav-icon">⌂</span>Overview</a
+          >
+          <a class="nav-link active" href="products.html"
+            ><span class="nav-icon">▦</span>Products</a
+          >
+          <a class="nav-link" href="../billing/billing.html"
+            ><span class="nav-icon">▤</span>Billing
+            <span class="nav-count" id="navCartCount">0</span></a
+          >
+          <a class="nav-link" href="../discounts/discounts.html"
+            ><span class="nav-icon">％</span>Discounts</a
+          >
+          <a class="nav-link" href="../reports/reports.html"
+            ><span class="nav-icon">↗</span>Reports</a
+          >
+          <a class="nav-link" href="../audit.html"
+            ><span class="nav-icon">◷</span>Audit log</a
+          >
+          <a class="nav-link" href="../profile.html"
+            ><span class="nav-icon">♙</span>My profile</a
+          >
         </nav>
         <div class="sidebar-bottom">
-          <div class="sidebar-tip"><span class="tip-icon">✦</span><strong>Store tip</strong><p>Keep an eye on low stock so your bestsellers stay on the shelf.</p></div>
-          <button class="nav-link logout-button" type="button" data-logout><span class="nav-icon">↪</span>Sign out</button>
-          <div class="sidebar-user"><span class="avatar" id="sidebarAvatar">S</span><span><strong id="sidebarName">Store Admin</strong><small>Store administrator</small></span></div>
+          <div class="sidebar-tip">
+            <span class="tip-icon">✦</span><strong>Store tip</strong>
+            <p>
+              Keep an eye on low stock so your bestsellers stay on the shelf.
+            </p>
+          </div>
+          <button class="nav-link logout-button" type="button" data-logout>
+            <span class="nav-icon">↪</span>Sign out
+          </button>
+          <div class="sidebar-user">
+            <span class="avatar" id="sidebarAvatar">S</span
+            ><span
+              ><strong id="sidebarName">Store Admin</strong
+              ><small>Store administrator</small></span
+            >
+          </div>
         </div>
       </aside>
       <main class="app-main">
-        <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <a href="products.html">Products</a> <span>/</span> Details</div><div class="topbar-actions"><span class="today-label" id="todayLabel"></span><span class="avatar avatar-small" id="topAvatar">S</span></div></header>
+        <header class="topbar">
+          <div class="breadcrumb">
+            Workspace <span>/</span> <a href="products.html">Products</a>
+            <span>/</span> Details
+          </div>
+          <div class="topbar-actions">
+            <span class="today-label" id="todayLabel"></span
+            ><span class="avatar avatar-small" id="topAvatar">S</span>
+          </div>
+        </header>
         <div class="page-content">
-          <section class="page-heading"><div><p class="eyebrow">INVENTORY MANAGEMENT</p><h1 id="pageTitle">Add a product</h1><p>Add something new to your campus store catalog.</p></div><a class="button button-secondary" href="products.html"><span aria-hidden="true">←</span> Back to products</a></section>
-          <section class="panel product-form-panel">
-            <div class="panel-heading"><div><p class="eyebrow">PRODUCT DETAILS</p><h2>Tell us about this item</h2></div><span class="form-step">01 <span>/</span> 01</span></div>
+          <section class="page-heading">
+            <div>
+              <p class="eyebrow">INVENTORY MANAGEMENT</p>
+              <h1 id="pageTitle">Add a product</h1>
+              <p>Add something new to your campus store catalog.</p>
+            </div>
+            <a class="button button-secondary" href="products.html"
+              ><span aria-hidden="true">←</span> Back to products</a
+            >
+          </section>
+          <section
+            class="panel product-form-panel"
+            aria-labelledby="productFormTitle"
+          >
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">PRODUCT DETAILS</p>
+                <h2 id="productFormTitle">Tell us about this item</h2>
+              </div>
+              <span class="form-step" aria-hidden="true"
+                >01 <span>/</span> 01</span
+              >
+            </div>
             <form id="productForm">
               <div class="form-grid">
-                <div class="form-field"><label for="productId">Product ID</label><input class="form-control" id="productId" name="productId" type="number" min="1" step="1" placeholder="For example, 109" required /><small>A unique number for this item.</small></div>
-                <div class="form-field"><label for="productName">Product name</label><input class="form-control" id="productName" name="productName" type="text" maxlength="70" placeholder="For example, Campus notebook" required /><small>Use a name your customers will recognise.</small></div>
-                <div class="form-field"><label for="category">Category</label><select class="form-control" id="category" name="category" required><option value="">Choose a category</option><option value="Book">Books</option><option value="Accessory">Accessories</option><option value="Stationery">Stationery</option></select></div>
-                <div class="form-field"><label for="productPrice">Selling price</label><input class="form-control" id="productPrice" name="productPrice" type="number" min="0.01" step="0.01" placeholder="0.00" required /><small>Price in Indian rupees (₹).</small></div>
-                <div class="form-field"><label for="productQuantity">Available quantity</label><input class="form-control" id="productQuantity" name="productQuantity" type="number" min="0" step="1" placeholder="0" required /><small>How many units are on your shelves?</small></div>
+                <div class="form-field">
+                  <label for="productId">Product ID</label
+                  ><input
+                    class="form-control"
+                    id="productId"
+                    name="productId"
+                    type="number"
+                    min="1"
+                    step="1"
+                    placeholder="For example, 109"
+                    aria-describedby="productIdHint"
+                    required
+                  /><small id="productIdHint"
+                    >A unique number for this item.</small
+                  >
+                </div>
+                <div class="form-field">
+                  <label for="productName">Product name</label
+                  ><input
+                    class="form-control"
+                    id="productName"
+                    name="productName"
+                    type="text"
+                    maxlength="70"
+                    placeholder="For example, Campus notebook"
+                    aria-describedby="productNameHint"
+                    required
+                  /><small id="productNameHint"
+                    >Use a name your customers will recognise.</small
+                  >
+                </div>
+                <div class="form-field">
+                  <label for="category">Category</label
+                  ><select
+                    class="form-control"
+                    id="category"
+                    name="category"
+                    required
+                  >
+                    <option value="">Choose a category</option>
+                    <option value="Book">Books</option>
+                    <option value="Accessory">Accessories</option>
+                    <option value="Stationery">Stationery</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="productPrice">Selling price</label
+                  ><input
+                    class="form-control"
+                    id="productPrice"
+                    name="productPrice"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="0.00"
+                    aria-describedby="productPriceHint"
+                    required
+                  /><small id="productPriceHint"
+                    >Price in Indian rupees (₹).</small
+                  >
+                </div>
+                <div class="form-field">
+                  <label for="productQuantity">Available quantity</label
+                  ><input
+                    class="form-control"
+                    id="productQuantity"
+                    name="productQuantity"
+                    type="number"
+                    min="0"
+                    step="1"
+                    placeholder="0"
+                    aria-describedby="productQuantityHint"
+                    required
+                  /><small id="productQuantityHint"
+                    >How many units are on your shelves?</small
+                  >
+                </div>
               </div>
-              <p id="productFormError" class="form-message" role="alert" hidden></p>
-              <div class="form-actions"><a class="button button-secondary" href="products.html">Cancel</a><button class="button button-primary" type="submit">Save product <span aria-hidden="true">→</span></button></div>
+              <p
+                id="productFormError"
+                class="form-message"
+                role="alert"
+                hidden
+              ></p>
+              <div class="form-actions">
+                <a class="button button-secondary" href="products.html"
+                  >Cancel</a
+                ><button class="button button-primary" type="submit">
+                  Save product <span aria-hidden="true">→</span>
+                </button>
+              </div>
             </form>
           </section>
         </div>
