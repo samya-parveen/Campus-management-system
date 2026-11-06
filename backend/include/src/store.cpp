@@ -113,10 +113,16 @@ void auditProduct(const Product& product, std::ostream& output) {
 
 bool Store::addProduct(int id, std::string name, study::Category category,
                        double basePrice) {
-  if (!validCategory(category)) return false;
-  for (const auto& product : products_) {
-    if (product->getId() == id) return false;
+  if (!validCategory(category)) {
+    return false;
   }
+
+  for (const auto& product : products_) {
+    if (product->getId() == id) {
+      return false;
+    }
+  }
+
   try {
     switch (category) {
       case study::Category::Book:
@@ -142,6 +148,7 @@ bool Store::deleteProduct(int id) {
       return true;
     }
   }
+
   return false;
 }
 
@@ -155,20 +162,29 @@ int Store::liveProductCount() const {
 
 bool Store::categoryPrice(int id, double& price) const {
   const Product* product = findProduct(id);
-  if (product == nullptr) return false;
+  if (product == nullptr) {
+    return false;
+  }
+
   price = product->finalPrice();
   return true;
 }
 
 double Store::discount(int id, double percent) const {
   const Product* product = findProduct(id);
-  if (product == nullptr) throw std::invalid_argument("Product ID was not found.");
+  if (product == nullptr) {
+    throw std::invalid_argument("Product ID was not found.");
+  }
+
   return product->discount(percent);
 }
 
 double Store::discountWithCoupon(int id, double percent, double coupon) const {
   const Product* product = findProduct(id);
-  if (product == nullptr) throw std::invalid_argument("Product ID was not found.");
+  if (product == nullptr) {
+    throw std::invalid_argument("Product ID was not found.");
+  }
+
   return product->discount(percent, coupon);
 }
 
@@ -184,7 +200,10 @@ std::string Store::billOutput(double firstAmount, double secondAmount) const {
 
 std::string Store::audit(int id) const {
   const Product* product = findProduct(id);
-  if (product == nullptr) return "Audit: product not found.";
+  if (product == nullptr) {
+    return "Audit: product not found.";
+  }
+
   std::ostringstream entry;
   auditProduct(*product, entry);
   return entry.str();
@@ -208,8 +227,11 @@ std::string Store::demoOutput() const {
 
 const Product* Store::findProduct(int id) const {
   for (const auto& product : products_) {
-    if (product->getId() == id) return product.get();
+    if (product->getId() == id) {
+      return product.get();
+    }
   }
+
   return nullptr;
 }
 
