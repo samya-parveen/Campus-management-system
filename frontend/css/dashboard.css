@@ -217,3 +217,7 @@
   .manager-card-details { grid-column: 2; }
   .manager-actions { grid-column: 1 / -1; }
 }
+.discounts-page .manager-form-panel { border-top: 3px solid #6f9c7d; }
+.discounts-page .form-step { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; background: #eaf4ed; font-size: 14px; }
+.discounts-page .manager-card { transition: border-color .18s, background .18s; }
+.discounts-page .manager-card:hover { border-color: #c9ddcd; background: #fbfdfb; }

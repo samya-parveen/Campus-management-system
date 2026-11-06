@@ -11,7 +11,7 @@
     <script src="../js/auth.js" defer></script>
     <script src="../js/promotions.js" defer></script>
   </head>
-  <body class="app-page">
+  <body class="app-page discounts-page">
     <div class="app-shell">
       <aside class="sidebar">
         <a class="brand" href="../dashboard.html"><span class="brand-mark" aria-hidden="true">C</span><span><strong>Campus Store</strong><small>MANAGEMENT SUITE</small></span></a>
@@ -20,7 +20,7 @@
           <a class="nav-link" href="../dashboard.html"><span class="nav-icon">⌂</span>Overview</a>
           <a class="nav-link" href="../products/products.html"><span class="nav-icon">▦</span>Products</a>
           <a class="nav-link" href="../billing/billing.html"><span class="nav-icon">▤</span>Billing <span class="nav-count" id="navCartCount">0</span></a>
-          <a class="nav-link" href="discounts.html"><span class="nav-icon">％</span>Discounts</a>
+          <a class="nav-link active" href="discounts.html" aria-current="page"><span class="nav-icon">％</span>Discounts</a>
           <a class="nav-link" href="../reports/reports.html"><span class="nav-icon">↗</span>Reports</a>
           <a class="nav-link" href="../audit.html"><span class="nav-icon">◷</span>Audit log</a>
           <a class="nav-link" href="../profile.html"><span class="nav-icon">♙</span>My profile</a>
@@ -31,9 +31,9 @@
         <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Discounts</div><div class="topbar-actions"><span class="today-label" id="todayLabel"></span><span class="avatar avatar-small" id="topAvatar">S</span></div></header>
         <div class="page-content">
           <section class="page-heading"><div><p class="eyebrow">OFFERS &amp; PRICING</p><h1>Discounts</h1><p>Create automatic offers for products in your campus store.</p></div></section>
-          <nav class="module-tabs" aria-label="Discount management"><a class="module-tab active" href="discounts.html">Product discounts</a><a class="module-tab" href="coupons.html">Coupon codes</a></nav>
+          <nav class="module-tabs" aria-label="Discount management"><a class="module-tab active" href="discounts.html" aria-current="page">Product discounts</a><a class="module-tab" href="coupons.html">Coupon codes</a></nav>
           <section class="discounts-layout">
-            <section class="panel manager-form-panel"><div class="panel-heading"><div><p class="eyebrow">NEW PROMOTION</p><h2>Create a product discount</h2></div><span class="form-step">✦</span></div>
+            <section class="panel manager-form-panel" aria-labelledby="discountFormTitle"><div class="panel-heading"><div><p class="eyebrow">NEW PROMOTION</p><h2 id="discountFormTitle">Create a product discount</h2></div><span class="form-step" aria-hidden="true">✦</span></div>
               <form id="discountForm">
                 <input id="discountId" type="hidden" />
                 <div class="form-grid">
@@ -47,7 +47,7 @@
                 <div class="form-actions"><button id="cancelDiscountEdit" class="button button-secondary" type="button" hidden>Cancel edit</button><button class="button button-primary" type="submit">Save discount <span aria-hidden="true">→</span></button></div>
               </form>
             </section>
-            <section class="panel manager-list-panel"><div class="panel-heading"><div><p class="eyebrow">AUTOMATIC SAVINGS</p><h2>Product discounts</h2></div><span id="discountCount" class="count-pill">0</span></div>
+            <section class="panel manager-list-panel" aria-labelledby="discountListTitle"><div class="panel-heading"><div><p class="eyebrow">AUTOMATIC SAVINGS</p><h2 id="discountListTitle">Product discounts</h2></div><span id="discountCount" class="count-pill">0</span></div>
               <p class="manager-help">The best matching product discount is included automatically at checkout. Coupon savings can be added on top.</p>
               <div id="discountList" class="manager-list"></div>
             </section>
