@@ -10,13 +10,12 @@ The system manages products, categories, pricing, discounts,
 billing, transactions and audit records.
 
 ## Technologies Used
-- C++ (Object-Oriented Programming)
-- Crow Framework
+- C++ (Object-Oriented Programming/ Procedural Oriented Programming)
 - HTML
 - CSS
 - JavaScript
 - SQLite
-- Git and GitHub
+- GitHub
 - VS Code
 
 ## Main Modules
@@ -48,14 +47,14 @@ billing, transactions and audit records.
 
 ## Installation
 1. Clone this repository.
-2. Install the required C++ compiler and CMake.
-3. Configure the Crow framework and SQLite.
-4. Build the backend using CMake.
+2. Install the required C++ compiler.
+3. Configure the SQLite.
+4. Build the backend.
 5. Start the backend server.
 6. Open the website in a browser.
 
 ## Team Members
-Samya Parveen, Diksha, Aayushi Deep, Anjali Kumari, Vansh, Abhishek Gautam, Anurag Kumar, Priyanshu
+Samya Parveen, Diksha, Aayushi Deep, Anjali Kumari, Vansh, Abhishek Gautam, Priyanshu
 
 ## Project Status
 Under Development.
